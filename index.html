@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Tok Downloader</title>
+</head>
+<body style="background-color:darkslategray">
+    <div style="text-align: center;width:100%;color:white;background-color: blue;" class="title">
+        <h1>T-Tok Downloader</h1>
+        <h4>Download your favorite TikTok images</h2>
+        <h5 >By zayd</h3>
+    </div>
+    <!--make a button that is centered on the page-->
+    <div style="text-align: center; padding-top:10%; color:whitesmoke;">
+        <input id = videoURL type="text" name="videoURL" placeholder="TikTok URL">
+        <button id='submit' type="submit" name="submit">Submit</button>
+    </div>
+    <script type="text/javascript">
+        document.getElementById("submit").onclick = function () {
+            let url = document.getElementById("videoURL").value;
+            if(url.indexOf('tiktok.com/t/')!=-1){
+                url=url.split('/')[4];
+                console.log(url);
+                location.href = "/result/"+url;
+            } else if(url.indexOf('tiktok.com/@')!=-1){
+                let urltemp;
+                urltemp=url.split('/')[3];
+                urltemp=urltemp+'LvideoL'+url.split('/')[5];
+                if(urltemp.indexOf('?')!=-1){
+                    urltemp=urltemp.split('?')[0];
+                }
+                url=urltemp;
+                console.log(url);
+                location.href = "/result/"+url;
+            } else {
+                alert("Invalid URL");
+                return;
+            }
+
+        };
+    </script>
+
+</body>
+
+
+</html>
