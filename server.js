@@ -6,7 +6,7 @@ const express = require('express');
 //launch browser
 
 const app = express();
-const port = 443;
+const port = 3000;
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+'/public'));
 console.log(    (__dirname+'/views'))
