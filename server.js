@@ -30,7 +30,7 @@ app.get('/result/:url',(req,res)=>{
     }
     async function getImages(){
         const browser = await puppeteer.launch({
-            headless: false,
+            headless: true,
         });
         console.log("browser launched");
         const page = await browser.newPage();
