@@ -2,6 +2,9 @@
 const puppeteer = require('puppeteer');
 const express = require('express');
 
+//only for current deploy, isnt stored in a file.
+let visitorCounter = 0
+let usesCounter = 0
 
 //launch browser
 console.log('APP BY ZAYD');
@@ -15,9 +18,14 @@ app.set('port', process.env.PORT);
 //make index page express
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
+    visitorCounter++;
+    console.log('visits on current runtime : '+visitorCounter);
+    console.log('uses on current runtime : '+usesCounter);
+ 
 });
 
 app.get('/result/:url',(req,res)=>{
+    usesCounter++;
     let imgs;
     let userURL=req.params.url;
     console.log(userURL);   
