@@ -22,7 +22,8 @@
   "homepage": "https://github.com/Zaydo123/t-tok-downloader#readme",
   "dependencies": {
     "express": "^4.18.1",
-    "puppeteer": "^14.4.1"
+    "puppeteer": "^14.4.1",
+    "ejs": ">=3.1.x"
   },
   "devDependencies": {},
   "description": ""
