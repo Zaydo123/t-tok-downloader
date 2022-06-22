@@ -1,15 +1,29 @@
 {
-  "dependencies": {
-    "puppeteer": "^14.4.1"
-  },
   "name": "tiktokdownloader",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16.5.1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Zayd Alzein",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zaydo123/t-tok-downloader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Zaydo123/t-tok-downloader/issues"
+  },
+  "homepage": "https://github.com/Zaydo123/t-tok-downloader#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "puppeteer": "^14.4.1"
+  },
+  "devDependencies": {},
   "description": ""
 }
