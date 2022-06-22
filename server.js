@@ -6,10 +6,12 @@ const express = require('express');
 //launch browser
 
 const app = express();
-const port = 8080;
+const port = 443;
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+'/public'));
 console.log(    (__dirname+'/views'))
+app.set('port', process.env.PORT || port);
+
 //make index page express
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
