@@ -31,6 +31,7 @@ app.get('/result/:url',(req,res)=>{
     async function getImages(){
         const browser = await puppeteer.launch({
             headless: true,
+            args: ['--no-sandbox','--disable-setuid-sandbox']
         });
         console.log("browser launched");
         const page = await browser.newPage();
