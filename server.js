@@ -9,11 +9,11 @@ let usesCounter = 0
 //launch browser
 console.log('APP BY ZAYD');
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+'/public'));
 console.log(    (__dirname+'/views'))
-app.set('port', process.env.PORT);
+app.set('port', port);
 
 //make index page express
 app.get('/', (req, res) => {
@@ -56,7 +56,9 @@ app.get('/result/:url',(req,res)=>{
         }
         await browser.close();
         for (let i = 0; i < imgs.length; i++) {
-            temp[i].split('-tx/')[1].split('~tplv')[0];
+            //console.log(imgs[i]);
+            //console.log('temp : '+temp[i]);
+            //temp[i].split('-tx/')[1].split('~tplv')[0];
             if(indices[temp[i]]){
                 imgs.splice(i,1);
             } else{
