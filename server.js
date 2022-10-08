@@ -14,7 +14,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname+'/public'));
 console.log(    (__dirname+'/views'))
 app.set('port', port);
-
+staticPath = __dirname;
+app.use(express.static(staticPath));
 //make index page express
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
